@@ -131,15 +131,6 @@ func admin(...){
 ```
 gosuger -f suger.yml /path/to/your/project
 
-- [ ] Sugar-question-mask [ 一种优雅的 err != nil ]
-- [ ] Sugar-string-format [两种优雅的字符串格式化 ]
-      - 基本完成
-- [ ] Sugar-decorator [ @Decorator ]
-      - 难产中......
-- [ ] Sugar-generics [ 范式支持 ]
-      - 选型中......
-- [ ] Sugar-operators [运算符重载]
-
 ```
 
 ```
