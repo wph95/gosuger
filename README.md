@@ -10,17 +10,17 @@
 
 
 
-<img src="./img/1.png" alt="alt text" width="200" height="whatever">
+<img src="./img/logo.png" alt="alt text" width="200" height="whatever">
 
 Golang 语法糖 管理工具
 
 ## 愿景
 
-希望作为一个类 babel 至于 js 的工具。 GOsUgar 期望通过标准化，流程化，插件化，一种基于 golang ast + golang generate + golang comment的轻量级无侵入的扩展 Golang 语法**管理工具**。
+希望作为一个类 babel 于 js 的工具。 GOsUgar 期望通过标准化，流程化，插件化，一种基于 golang ast + golang generate + golang comment的轻量级无侵入的扩展 Golang 语法**管理工具**。
 
 // 又一个包管理工具 😓
 
-
+GOsUgar 作为一个尝试，未来从而通过对 AST 的扩充，形成一门代码精简，可读性强的 Go 方言 GOU。
 
 ## TODO
 
@@ -126,7 +126,7 @@ func admin(...){
 
 
 
-# goSuger quickstart
+# GOsUger quickstart
 
 ```
 gosuger -f suger.yml /path/to/your/project
@@ -166,7 +166,7 @@ project:
 
 ## 团队
 
-GoSugar 目前就一个工作中用 Python，个人项目 90% 用 Python ，痴迷效率，懒驱动开发，节约时间玩吃鸡的,迷恋 Python 的高效和简洁。又想要 Golang 的并发友好和性能的弱鸡程序猿— wph95
+GOsUgar 目前就一个工作中用 Python，个人项目 90% 用 Python ，痴迷效率，懒驱动开发，节约时间玩吃鸡的,迷恋 Python 的高效和简洁。又想要 Golang 的并发友好和性能的弱鸡程序猿— wph95
 
 
 
