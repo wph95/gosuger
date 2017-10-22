@@ -2,18 +2,24 @@ package main
 
 import (
 	"fmt"
-	//"go/ast"
 	"go/parser"
 	"go/token"
 	"log"
 	"os"
 	"path/filepath"
 	"strings"
+	"github.com/davecgh/go-spew/spew"
+	"io/ioutil"
 )
 
 type InputFile struct {
 	PackageName string
 	BuildTarget string
+}
+
+type Pos struct {
+	Line int
+	Column int
 }
 
 // Init initializes an InputFile from a path.
@@ -40,27 +46,52 @@ func (i *InputFile) Init(path string) error {
 		fmt.Errorf("Unable to parse '%s': %s", path, err)
 	}
 
-	//ast.Print(fset, f)
 
-	// get package name
-	//if f.Name != nil {
-	//	(*i).PackageName = f.Name.Name
-	//} else {
-	//	fmt.Errorf("Missing package name in '%s'", path)
-	//}
+	replaceLine := []Pos{}
 
-	// build list of tables
+
 	for _, commentGroup := range f.Comments {
 		print("hello ")
 		//fmt.Println(spew.Sprint(commentGroup))
 		for _, 	comment := range  commentGroup.List{
 			println(comment.Text)
-			if strings.HasPrefix(comment.Text, ""){
-				println("mingzhong")
+			if strings.HasPrefix(comment.Text, "? "){
+				replaceLine = append(replaceLine, Pos{Line:fset.Position(comment.Slash).Line,
+					Column:fset.Position(comment.Slash).Column,
+				})
+				println(spew.Sdump(fset.Position(comment.Slash)))
 			}
+
 		}
 	}
+	println(spew.Sdump(replaceLine))
+	replace(path, replaceLine)
+	return nil
+}
 
+func replace(path string, replaceLine []Pos) error {
+	newFilename := fmt.Sprintf("%s-sugered.go", strings.Split(filepath.Base(path), ".")[0])
+	newPath := filepath.Join(filepath.Dir(path), newFilename)
+	input, err := ioutil.ReadFile(path)
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	lines := strings.Split(string(input), "\n")
+
+	for _,pos := range replaceLine {
+		l := lines[pos.Line]
+		index := ""
+		for i := 0; i < pos.Column-1; i++ {
+			index = fmt.Sprintf("%s%c", index,l[i])
+		}
+		lines[pos.Line] = index + "if err != nil {"
+	}
+	output := strings.Join(lines, "\n")
+	err = ioutil.WriteFile(newPath, []byte(output), 0644)
+	if err != nil {
+		log.Fatalln(err)
+	}
 	return nil
 }
 
