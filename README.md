@@ -23,7 +23,6 @@ Golang 语法糖 管理工具
 ## TODO
 
 - [x] Sugar-question-mask [ 一种优雅的 err != nil ]
-
 - [ ] Sugar-string-format [两种优雅的字符串格式化 ]
     - 基本完成
 - [ ] Sugar-decorator [ @Decorator ]
@@ -41,25 +40,35 @@ Golang 语法糖 管理工具
 
 例如:
 
+###  Sugar-question-mask
+
 一种优雅的 error != nil
 
 ```
+Sugar-question-mask-0.go
 // try err
 {
   ......
   return err
 }
-or
+```
+
+
+```
+Sugar-question-mask-1.go
 // ? err
 {
   ......
   return err
 }
+```
 
+#### 转换后
 
-等效于
-
-if err != err {
+```
+target.go
+// ? err
+if err != nil {
   ......
   return err
 }
@@ -67,15 +76,42 @@ if err != err {
 
 
 
-一种优雅的装饰器  [Todo]
+### Sugar-string-format
+
+两种优雅的字符串格式化
+
+```
+apple := "Golang China Foundation"
+pen := "PingCAP"
+slogan := `${apple} x ${pen}`
+print(slogan)
+println("${apple} x ${pen}".format(apple, pen))
+```
+
+#### 转换后
+
+```
+apple := "Golang China Foundation"
+pen := "PingCAP"
+slogan := fmt.Sprintf("%s x %s",apple, pen)
+println(slogan)
+println(fmt.Sprintf("%s x %s",apple, pen))
+```
+
+
+
+### Sugar-decorator 
 
 ```
 // @ required_login arg0 arg1
 func admin(...){
   {detail}
 }
+```
 
+#### 转换后
 
+```
 等效于
 func admin_decorator_0(){
   {detail}
