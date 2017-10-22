@@ -40,7 +40,7 @@ Golang 语法糖 管理工具
 
 例如:
 
-###  Sugar-question-mask
+## Sugar-question-mask
 
 一种优雅的 error != nil
 
@@ -76,7 +76,7 @@ if err != nil {
 
 
 
-### Sugar-string-format
+## Sugar-string-format
 
 两种优雅的字符串格式化
 
@@ -100,7 +100,7 @@ println(fmt.Sprintf("%s x %s",apple, pen))
 
 
 
-### Sugar-decorator 
+## Sugar-decorator
 
 ```
 // @ required_login arg0 arg1
