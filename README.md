@@ -22,7 +22,8 @@ Golang 语法糖 管理工具
 
 ## TODO
 
-- [-] Sugar-question-mask [ 一种优雅的 err != nil ]
+- [x] Sugar-question-mask [ 一种优雅的 err != nil ]
+
 - [ ] Sugar-string-format [两种优雅的字符串格式化 ]
     - 基本完成
 - [ ] Sugar-decorator [ @Decorator ]
