@@ -1,4 +1,4 @@
-## **GOsUgar**
+## **GOsUgar** 🍬
 
 > GoCn 2017 goHackathon
 >
