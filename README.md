@@ -6,6 +6,8 @@
 
 
 
+> ⚠️Waring: 本项目还在施工🚧中，目前处于玩具🔫状态
+
 
 
 <img src="./img/1.png" alt="alt text" width="200" height="whatever">
@@ -121,6 +123,42 @@ func admin(...){
   required(arg0, arg1, admin_decorator_0) 
 }
 ```
+
+
+
+# goSuger quickstart
+
+```
+gosuger -f suger.yml /path/to/your/project
+
+- [ ] Sugar-question-mask [ 一种优雅的 err != nil ]
+- [ ] Sugar-string-format [两种优雅的字符串格式化 ]
+      - 基本完成
+- [ ] Sugar-decorator [ @Decorator ]
+      - 难产中......
+- [ ] Sugar-generics [ 范式支持 ]
+      - 选型中......
+- [ ] Sugar-operators [运算符重载]
+
+```
+
+```
+suger.yml
+
+plugins:
+  - suger-question-mask
+  - suger-string-format
+  - suger-decorator
+  - github.com/joeshaw/gengen@latest
+project:
+  - /<package_name>/*
+  - /<package_name>/a/*/b.go
+  ...
+```
+
+
+
+
 
 
 
