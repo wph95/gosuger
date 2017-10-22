@@ -1,6 +1,14 @@
 ## **GOsUgar**
 
 > GoCn 2017 goHackathon
+>
+> Make Golang Sugar Again.
+
+
+
+
+
+<img src="./img/1.png" alt="alt text" width="200" height="whatever">
 
 Golang 语法糖 管理工具
 
@@ -12,22 +20,29 @@ Golang 语法糖 管理工具
 
 
 
+## TODO
+
+- [ ] Sugar-question-mask [ 一种优雅的 err != nil ]
+- [ ] Sugar-decorator [ Python Decorator ]
+
 ## 什么？ Golang 还有语法糖
 
 是的 你没有看错。虽然这个语法糖基于 comment。
+
+以下是几个简单的例子
 
 例如:
 
 一种优雅的 error != nil
 
 ```
-#try err
+// try err
 {
   ......
   return err
 }
 or
-#? err
+// ? err
 {
   ......
   return err
@@ -47,7 +62,7 @@ if err != err {
 一种优雅的装饰器  [Todo]
 
 ```
-#@ required_login arg0 arg1
+// @ required_login arg0 arg1
 func admin(...){
   {detail}
 }
@@ -62,6 +77,8 @@ func admin(...){
   required(arg0, arg1, admin_decorator_0) 
 }
 ```
+
+
 
 
 
