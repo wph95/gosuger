@@ -22,8 +22,15 @@ Golang 语法糖 管理工具
 
 ## TODO
 
-- [ ] Sugar-question-mask [ 一种优雅的 err != nil ]
-- [ ] Sugar-decorator [ Python Decorator ]
+- [-] Sugar-question-mask [ 一种优雅的 err != nil ]
+- [ ] Sugar-string-format [两种优雅的字符串格式化 ]
+    - 基本完成
+- [ ] Sugar-decorator [ @Decorator ]
+    - 难产中......
+- [ ] Sugar-generics [ 范式支持 ]
+    - 选型中......
+- [ ] Sugar-operators [运算符重载]
+    - base on https://github.com/jessevdk/go-operators
 
 ## 什么？ Golang 还有语法糖
 
@@ -91,5 +98,7 @@ GoSugar 目前就一个工作中用 Python，个人项目 90% 用 Python ，痴�
 ## 参考和启发
 
 https://github.com/riolet/rix
+
+https://github.com/jessevdk/go-operators
 
 [todo]
